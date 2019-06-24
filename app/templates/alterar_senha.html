@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alterar senha</title>
+</head>
+<body>
+
+<form method="post">
+    {% csrf_token %}
+
+    <div class="form-group">
+        {{form_senha.old_password.errors}}
+        <label>Senha antiga: </label>
+        {{form_senha.old_password}}
+    </div>
+
+    <div class="form-group">
+        {{form_senha.new_password1.errors}}
+        <label>Nova senha: </label>
+        {{form_senha.new_password1}}
+    </div>
+
+    <div class="form-group">
+        {{form_senha.new_password2.errors}}
+        <label>Confirmação de senha: </label>
+        {{form_senha.new_password2}}
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Alterar" class="btn btn-primary">
+    </div>
+</form>
+
+</body>
+</html>
